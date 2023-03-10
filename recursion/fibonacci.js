@@ -7,7 +7,7 @@ function fibsRec(quantity) {
   }
   // recursive case
   let array = fibsRec(quantity - 1);
-  array.push(array[array.length - 2] + array[array.length - 1])
+  array.push(array[array.length - 2] + array[array.length - 1]);
 
   return array;
 }
