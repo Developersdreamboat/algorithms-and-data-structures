@@ -35,6 +35,4 @@ function merge(first, second) {
   return mergedArray;
 }
 
-console.log(mergeSort([1, 5, 6, 0, 2, 5, 10, 2, 0]));
-console.log(mergeSort([-5, -2, 20, 343, 1, 0, 25]));
-console.log(mergeSort([15, 0, 5, 7, 3, 7, 1]));
+module.exports = mergeSort;
