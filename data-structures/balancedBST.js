@@ -73,6 +73,37 @@ class Tree {
 
     return node;
   }
+
+  delete(value, node = this.root) {
+    if (node === null) {
+      return node;
+    }
+  
+    if (node.data > value) {
+      node.left = this.delete(value, node.left);
+    } else if (node.data < value) {
+      node.right = this.delete(value, node.right);
+    } else {
+      if (node.left === null) {
+        return node.right;
+      } else if (node.right === null) {
+        return node.left;
+      }
+  
+      const minValue = this.findMinNode(node.right).data;
+      node.data = minValue;
+      node.right = this.delete(minValue, node.right);
+    }
+  
+    return node;
+  }
+  
+  findMinNode(node) {
+    while (node.left !== null) {
+      node = node.left;
+    }
+    return node;
+  }
 } 
 
 
@@ -83,4 +114,6 @@ const sortedArray = mergeSort(array);
 const buildArray = removeDuplicatesFromSortedArray(sortedArray);
 let tree = new Tree(buildArray);
 tree.insert(7);
+prettyPrint(tree.root);
+tree.delete(8);
 prettyPrint(tree.root);
