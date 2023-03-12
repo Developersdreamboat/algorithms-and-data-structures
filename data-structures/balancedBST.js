@@ -58,6 +58,21 @@ class Tree {
   
     return root;
   }
+
+  insert(value, node = this.root) {
+    if (node === null) {
+      node = new Node(value);
+      return node;
+    }
+
+    if (node.data > value) {
+      node.left = this.insert(value, node.left);
+    } else if (node.data < value) {
+      node.right = this.insert(value, node.right);
+    }
+
+    return node;
+  }
 } 
 
 
@@ -67,4 +82,5 @@ const array = [5, 1, 10, 2, 1, 8, 4, 5, 3, 5];
 const sortedArray = mergeSort(array);
 const buildArray = removeDuplicatesFromSortedArray(sortedArray);
 let tree = new Tree(buildArray);
+tree.insert(7);
 prettyPrint(tree.root);
