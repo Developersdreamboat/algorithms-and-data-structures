@@ -155,6 +155,39 @@ class LinkedList {
     resultString += 'null';
     return resultString;
   }
+
+  insertAt(value, index) {
+    if (index < 0 || this.size() < index) {
+      return;
+    }
+
+    if (index === 0) {
+      this.prepend(value);
+      return;
+    }
+
+    let newNode = new Node(value);
+    let searchedNode = this.at(index);
+    newNode.next = searchedNode;
+    this.at(index - 1).next = newNode;
+  }
+  
+  removeAt(index) {
+    if (index < 0 || this.size() < index) {
+      return;
+    }
+
+    if (index === 0) {
+      if (this.size() === 1) {
+        this.pop();
+      }
+
+      this.head = this.at(index + 1);
+      return;
+    }
+
+    this.at(index - 1).next = this.at(index + 1);
+  }
 }
 
 /* Test
@@ -177,5 +210,18 @@ console.log(linkedList.contains(100));
 console.log(linkedList.find(100));
 console.log(linkedList.find(200));
 console.log(linkedList.toString()); 
-
+console.log('########################################################');
+linkedList.insertAt(150, 4);
+console.log(linkedList.toString());
+linkedList.insertAt(5, 0);
+console.log(linkedList.toString());
+linkedList.insertAt(7, -5);
+console.log(linkedList.toString());
+console.log('########################################################');
+linkedList.removeAt(0);
+console.log(linkedList.toString());
+linkedList.removeAt(5);
+console.log(linkedList.toString());
+linkedList.removeAt(1);
+console.log(linkedList.toString());
 */
