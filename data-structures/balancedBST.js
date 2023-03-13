@@ -104,6 +104,20 @@ class Tree {
     }
     return node;
   }
+
+  find(value, node = this.root) {
+    if (node.data === value) {
+      return node;
+    }
+
+    if (node.data < value) {
+      return this.find(value, node.right);
+    } else if (node.data > value) {
+      return this.find(value, node.left);
+    }
+    
+    return null;
+  }
 } 
 
 
@@ -117,3 +131,4 @@ tree.insert(7);
 prettyPrint(tree.root);
 tree.delete(8);
 prettyPrint(tree.root);
+console.log(tree.find(5));
