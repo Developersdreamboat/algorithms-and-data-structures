@@ -266,6 +266,18 @@ class Tree {
       return array;
     }
   }
+
+  height(node) {
+    if (node === null) {
+      return -1; 
+    } else {
+      
+      const leftHeight = this.height(node.left);
+      const rightHeight = this.height(node.right);
+  
+      return Math.max(leftHeight, rightHeight) + 1;
+    }
+  }
 } 
 
 
@@ -289,14 +301,20 @@ prettyPrint(tree.root); */
 /* console.log(tree.find(5)); */
 
 /* Test with provided function and without */
-function printNodeValue(node) {
+/* function printNodeValue(node) {
   console.log(node.data);
-}
+} */
 /* tree.levelOrder(printNodeValue);
 console.log(tree.levelOrder()); */
 /* tree.inOrder(printNodeValue);
 console.log(tree.inOrder()); */
 /* tree.preOrder(printNodeValue);
 console.log(tree.preOrder()); */
-tree.postOrder(printNodeValue);
-console.log(tree.postOrder());
+/* tree.postOrder(printNodeValue);
+console.log(tree.postOrder()); */
+
+/* Height of tree */
+/* const testNode1 = tree.find(3);
+const testNode2 = tree.find(8);
+const testNode3 = tree.find(4);
+console.log(`3: ${tree.height(testNode1)}\n 8: ${tree.height(testNode2)}\n 4: ${tree.height(testNode3)}`); */
