@@ -31,7 +31,7 @@ class Node {
 
   set right(value) {
     this._right = value;
-  }
+  } 
 }
 
 class Tree {
@@ -118,17 +118,68 @@ class Tree {
     
     return null;
   }
+
+  levelOrder(callback) {
+    if (this.root === null) {
+      return null;
+    }
+
+    const array = [];
+    const queue = [];
+    queue.push(this.root);
+
+    while (queue.length !== 0) {
+      let current = queue.shift();
+
+      array.push(current);
+
+      if (current.left !== null) {
+        queue.push(current.left);
+      }
+
+      if (current.right !== null) {
+        queue.push(current.right);
+      }
+    }
+
+    if (callback !== undefined) {
+      for (let i = 0; i < array.length; i++) {
+        callback(array[i]);
+      }
+
+      return;
+    } else {
+      for (let i = 0; i < array.length; i++) {
+        array[i] = array[i].data;
+      }
+
+      return array;
+    }
+  }
 } 
 
 
 
-
-const array = [5, 1, 10, 2, 1, 8, 4, 5, 3, 5];
+/* Driver */
+/* const array = [5, 1, 10, 2, 1, 8, 4, 5, 3, 5];
 const sortedArray = mergeSort(array);
 const buildArray = removeDuplicatesFromSortedArray(sortedArray);
-let tree = new Tree(buildArray);
-tree.insert(7);
-prettyPrint(tree.root);
-tree.delete(8);
-prettyPrint(tree.root);
-console.log(tree.find(5));
+let tree = new Tree(buildArray); */
+
+/* Insertion */
+/* tree.insert(7);
+prettyPrint(tree.root); */
+
+/* Deletion */
+/* tree.delete(8);
+prettyPrint(tree.root); */
+
+/* Search */
+/* console.log(tree.find(5)); */
+
+/* Test with provided function and without */
+/* function printNodeValue(node) {
+  console.log(node.data);
+}
+tree.levelOrder(printNodeValue);
+console.log(tree.levelOrder()); */
