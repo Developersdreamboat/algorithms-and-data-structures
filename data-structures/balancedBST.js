@@ -157,7 +157,7 @@ class Tree {
     }
   }
 
-  inOrder(callback) {
+  inOrderIterative(callback) {
     if (this.root === null) {
       return null;
     }
@@ -192,7 +192,7 @@ class Tree {
     }
   }
   
-  preOrder(callback) {
+  preOrderIterative(callback) {
     if (this.root === null) {
       return null;
     }
@@ -229,7 +229,7 @@ class Tree {
     }
   }
 
-  postOrder(callback) {
+  postOrderIterative(callback) {
     if (this.root === null) {
       return null;
     }
@@ -306,12 +306,12 @@ prettyPrint(tree.root); */
 } */
 /* tree.levelOrder(printNodeValue);
 console.log(tree.levelOrder()); */
-/* tree.inOrder(printNodeValue);
-console.log(tree.inOrder()); */
-/* tree.preOrder(printNodeValue);
-console.log(tree.preOrder()); */
-/* tree.postOrder(printNodeValue);
-console.log(tree.postOrder()); */
+/* tree.inOrderIterative(printNodeValue);
+console.log(tree.inOrderIterative()); */
+/* tree.preOrderIterative(printNodeValue);
+console.log(tree.preOrderIterative()); */
+/* tree.postOrderIterative(printNodeValue);
+console.log(tree.postOrderIterative()); */
 
 /* Height of tree */
 /* const testNode1 = tree.find(3);
