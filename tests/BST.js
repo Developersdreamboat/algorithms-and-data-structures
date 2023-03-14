@@ -40,8 +40,10 @@ const values = [];
 function pushNodeValue(node) {
   values.push(node.data);
 }
-tree.inOrderRecursive(pushNodeValue);
-console.log(`In Order Recursive Array: ${values}`);
+//tree.inOrderRecursive(pushNodeValue);
+//tree.preOrderRecursive(pushNodeValue);
+//tree.postOrderRecursive(pushNodeValue);
+console.log(`Depth Recursive Array: ${values}`);
 
 /* Height of tree */
 const testNode1 = tree.find(3);
