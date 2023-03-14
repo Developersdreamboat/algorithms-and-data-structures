@@ -12,7 +12,4 @@ function fibsRec(quantity) {
   return array;
 }
 
-console.log(fibsRec(0));
-console.log(fibsRec(5));
-console.log(fibsRec(8));
-console.log(fibsRec(20));
+module.exports = fibsRec;
