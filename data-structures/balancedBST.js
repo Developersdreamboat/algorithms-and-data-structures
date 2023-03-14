@@ -203,6 +203,20 @@ class Tree {
       return array;
     }
   }
+
+  preOrderRecursive(callback, node = this.root) {
+    if (node === null) return null;
+
+    callback(node);
+
+    if (node.left !== null) {
+      this.preOrderRecursive(callback, node.left);
+    }
+
+    if (node.right !== null) {
+      this.preOrderRecursive(callback, node.right);
+    }
+  }
   
   preOrderIterative(callback) {
     if (this.root === null) {
