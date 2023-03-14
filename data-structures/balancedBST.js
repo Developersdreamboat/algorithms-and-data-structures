@@ -157,6 +157,20 @@ class Tree {
     }
   }
 
+  inOrderRecursive(callback, node = this.root) {
+    if (node === null) return null;
+
+    if (node.left !== null) {
+      this.inOrderRecursive(callback, node.left);
+    }
+
+    callback(node);
+
+    if (node.right !== null) {
+      this.inOrderRecursive(callback, node.right);
+    }
+  }
+
   inOrderIterative(callback) {
     if (this.root === null) {
       return null;
