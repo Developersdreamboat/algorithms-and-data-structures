@@ -173,20 +173,20 @@ class LinkedList {
   }
   
   removeAt(index) {
-    if (index < 0 || this.size() < index) {
+    if (index < 0 || this.size() <= index) {
+      return;
+    }
+
+    if (index === this.size() - 1) {
+      this.pop();
       return;
     }
 
     if (index === 0) {
-      if (this.size() === 1) {
-        this.pop();
-      }
-
-      this.head = this.at(index + 1);
-      return;
+      this.head = this.head.next;
+    } else {
+      this.at(index - 1).next = this.at(index + 1);
     }
-
-    this.at(index - 1).next = this.at(index + 1);
   }
 }
 
