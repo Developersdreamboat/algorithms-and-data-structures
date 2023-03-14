@@ -255,6 +255,20 @@ class Tree {
     }
   }
 
+  postOrderRecursive(callback, node = this.root) {
+    if (node === null) return null;
+
+    if (node.left !== null) {
+      this.postOrderRecursive(callback, node.left);
+    }
+
+    if (node.right !== null) {
+      this.postOrderRecursive(callback, node.right);
+    }
+
+    callback(node);
+  }
+
   postOrderIterative(callback) {
     if (this.root === null) {
       return null;
