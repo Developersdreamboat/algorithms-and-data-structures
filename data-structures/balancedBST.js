@@ -318,6 +318,42 @@ class Tree {
       return Math.max(leftHeight, rightHeight) + 1;
     }
   }
+
+  depth(node, current = this.root) {
+    if (node === null) {
+      return -1;
+    }
+
+    if (node === current) {
+      return 0;
+    }
+    
+    if (node.data < current.data) {
+      return 1 + this.depth(node, current.left);
+    } else {
+      return 1 + this.depth(node, current.right);
+    }
+  }
+
+  depthIterative(node) {
+    if (node === null) return null;
+
+    let current = this.root;
+    let count = 0;
+
+    while (current !== node) {
+      if (current.data > node.data) {
+        current = current.left;
+        count++;
+      } else if (current.data < node.data) {
+        current = current.right;
+        count++;
+      }
+    }
+
+    return count;
+  }
+  
 } 
 
 module.exports = { Tree, Node };
