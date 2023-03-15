@@ -1,5 +1,5 @@
-const { Tree, Node } = require('../data-structures/balancedBST');
-const mergeSort = require("../algorithms/recursion/mergeSort");
+const { Tree, Node } = require('../data-structures/binary-search-tree');
+const mergeSort = require("../algorithms/recursion/merge-sort");
 const removeDuplicatesFromSortedArray = require("../modules/removeDuplicates");
 const prettyPrint = require("../modules/prettyPrint");
 

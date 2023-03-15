@@ -1,4 +1,4 @@
-const { LinkedList } = require('../data-structures/linkedList');
+const { LinkedList } = require('../data-structures/linked-list');
 
 let linkedList = new LinkedList();
 
