@@ -52,3 +52,13 @@ const testNode3 = tree.find(4);
 console.log(`3: ${tree.height(testNode1)}\n 5: ${tree.height(testNode2)}\n 4: ${tree.height(testNode3)}`);
 console.log(`3: ${tree.depth(testNode1)}\n 5: ${tree.depth(testNode2)}\n 4: ${tree.depth(testNode3)}`);
 console.log(`3: ${tree.depthIterative(testNode1)}\n 5: ${tree.depthIterative(testNode2)}\n 4: ${tree.depthIterative(testNode3)}`);
+
+/* Check if balanced */
+console.log(`Is tree balanced: ${tree.isBalanced()}`);
+prettyPrint(tree.root);
+tree.insert(100);
+tree.insert(150);
+tree.insert(350);
+tree.insert(450);
+console.log(`Is changed tree balanced: ${tree.isBalanced()}`);
+prettyPrint(tree.root);
