@@ -62,3 +62,12 @@ tree.insert(350);
 tree.insert(450);
 console.log(`Is changed tree balanced: ${tree.isBalanced()}`);
 prettyPrint(tree.root);
+
+/* Rebalance tree */
+prettyPrint(tree.root); // Show initial tree
+
+tree.rebalance();
+prettyPrint(tree.root); // Show rebalance of unbalanced tree
+
+tree.rebalance();
+prettyPrint(tree.root); // Show rebalance of balanced tree
