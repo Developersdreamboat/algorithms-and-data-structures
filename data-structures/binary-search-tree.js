@@ -363,6 +363,12 @@ class Tree {
     return Math.abs(leftHeight - rightHeight) <= 1;
   }
 
+  rebalance() {
+    const values = [];
+    
+    this.inOrderRecursive((node) => values.push(node.data));
+    this.root = this.buildTree(values);
+  }
 } 
 
 module.exports = { Tree, Node };
