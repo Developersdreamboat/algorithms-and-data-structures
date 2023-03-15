@@ -1,7 +1,7 @@
 const { Tree, Node } = require('../data-structures/binary-search-tree');
 const mergeSort = require("../algorithms/recursion/merge-sort");
-const removeDuplicatesFromSortedArray = require("../modules/removeDuplicates");
-const prettyPrint = require("../modules/prettyPrint");
+const removeDuplicatesFromSortedArray = require("../modules/remove-duplicates");
+const prettyPrint = require("../modules/pretty-print");
 
 /* Driver */
 const array = [5, 1, 10, 2, 1, 8, 4, 5, 3, 5];
