@@ -45,8 +45,10 @@ function pushNodeValue(node) {
 //tree.postOrderRecursive(pushNodeValue);
 console.log(`Depth Recursive Array: ${values}`);
 
-/* Height of tree */
+/* Height/Depth of tree */
 const testNode1 = tree.find(3);
 const testNode2 = tree.find(5);
 const testNode3 = tree.find(4);
 console.log(`3: ${tree.height(testNode1)}\n 5: ${tree.height(testNode2)}\n 4: ${tree.height(testNode3)}`);
+console.log(`3: ${tree.depth(testNode1)}\n 5: ${tree.depth(testNode2)}\n 4: ${tree.depth(testNode3)}`);
+console.log(`3: ${tree.depthIterative(testNode1)}\n 5: ${tree.depthIterative(testNode2)}\n 4: ${tree.depthIterative(testNode3)}`);
