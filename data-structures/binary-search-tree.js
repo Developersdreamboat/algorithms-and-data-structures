@@ -354,6 +354,15 @@ class Tree {
     return count;
   }
   
+  isBalanced() {
+    if (this.root === null) return null;
+
+    const leftHeight = this.height(this.root.left);
+    const rightHeight = this.height(this.root.right);
+
+    return Math.abs(leftHeight - rightHeight) <= 1;
+  }
+
 } 
 
 module.exports = { Tree, Node };
